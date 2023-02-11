@@ -27,12 +27,16 @@
 
   <script type="module">
     import { render } from 'preact';
-    import { signal } from "@preact/signals";
-
-    const count = signal(0);
+    import { useState } from 'preact/hooks';
 
     function App() {
-      return html`<h1>Hello!</h1>`;
+      const [num, setNum] = useState(0);
+      const add = () => setNum(n => n + 1);
+
+      return html`<div>
+        <h1>Hello! ${num}</h1>
+        <button onClick=${add}>+</button>
+      </div>`;
     }
 
     render(html`<${App} />`, document.body);
