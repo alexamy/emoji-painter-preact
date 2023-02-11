@@ -18,32 +18,8 @@
     }
   </script>
 
-  <script type="module">
-    import { h, render } from 'preact';
-    import htm from 'htm';
-
-    window.html = htm.bind(h);
-  </script>
-
-  <script type="module">
-    import { render } from 'preact';
-    import { signal } from '@preact/signals';
-
-    const count = signal(0);
-    const increment = () => count.value++;
-
-    function App() {
-      return html`
-        <div>
-          <h1>${count.value}</h1>
-          <button onClick=${increment}>+</button>
-        </div>
-      `;
-    }
-
-    render(html`<${App} />`, document.body);
-  </script>
-
+  <script type="module" src="./html.js"></script>
+  <script type="module" src="./app.js"></script>
 </head>
 <body></body>
 </html>
