@@ -1,12 +1,12 @@
 import 'preact/debug';
 import { render } from 'preact';
-import { signal } from '@preact/signals';
+import { useSignal } from '@preact/signals';
 import { html } from './html.js';
 
-const count = signal(0);
-const increment = () => { console.log(count); count.value++; }
-
 function App() {
+  const count = useSignal(0);
+  const increment = () => { console.log(count); count.value++; }
+
   return html`
     <div>
       <h1>${count.value}</h1>
