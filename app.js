@@ -9,7 +9,7 @@ const increment = () => { count.value++; }
 function App() {
   return html`
     <div>
-      <h1>${count.value}</h1>
+      <h1>${count}</h1>
       <button onClick=${increment}>+</button>
     </div>
   `;
