@@ -15,7 +15,7 @@ export function Images({ field }) {
 
 function ImageRow({ row }) {
   return html`
-    <div>
+    <div class='imageRow'>
       ${row.map((key, i) => {
         return html`
           <${Image} key=${i} src='${images.value[key]}' />
@@ -27,6 +27,6 @@ function ImageRow({ row }) {
 
 function Image({ src }) {
   return html`
-    <img class='icon' src='${src}' />
+    <img class='image' src='${src}' />
   `;
 }

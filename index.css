@@ -1,4 +1,8 @@
-.icon {
+.imageRow {
+  line-height: 0;
+}
+
+.image {
   width: 32px;
   height: 32px;
 }
