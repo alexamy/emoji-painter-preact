@@ -20,7 +20,7 @@ function ImageRow({ row }) {
     <div>
       ${row.map((key, i) => {
         return html`
-          <img key=${i} src='${images.value[key]}' />
+          <img class='icon' key=${i} src='${images.value[key]}' />
         `;
       })}
     </div>
