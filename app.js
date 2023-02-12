@@ -1,7 +1,8 @@
 import 'preact/debug';
 import { render } from 'preact';
 import { html } from './html.js';
-import { images, field, fieldSize, setHeight, setWidth } from './state.js';
+import { Images } from './images.js';
+import { field, fieldSize, setHeight, setWidth } from './state.js';
 
 function FieldControls() {
   const { width, height } = fieldSize.value;
@@ -16,30 +17,6 @@ function FieldControls() {
       <input class='fieldInput' type='number' name='height' value=${height} min='1' max='25'
         onchange=${(e) => setHeight(e.target.value)}
       />
-    </div>
-  `;
-}
-
-function Images({ field }) {
-  return html`
-    <div>
-      ${field.value.map((row, i) => {
-        return html`
-          <${ImageRow} key=${i} row=${row} />
-        `;
-      })}
-    </div>
-  `;
-}
-
-function ImageRow({ row }) {
-  return html`
-    <div>
-      ${row.map((key, i) => {
-        return html`
-          <img class='icon' key=${i} src='${images.value[key]}' />
-        `;
-      })}
     </div>
   `;
 }
