@@ -34,18 +34,16 @@ function Image({ src, row, col }) {
 	`;
 }
 
-function paint(rowi, coli) {
-	field.value = field.value.map((row, r) => {
-		return r !== rowi ? row : row.map((key, c) => {
-			return c !== coli ? key : brush.value;
-		});
-	});
+function paint(row, col) {
+	const newField = field.value.map(r => r.slice());
+	newField[row][col] = brush.value;
+
+	field.value = newField;
 }
 
-function erase(rowi, coli) {
-	field.value = field.value.map((row, r) => {
-		return r !== rowi ? row : row.map((key, c) => {
-			return c !== coli ? key : background.value;
-		});
-	});
+function erase(row, col) {
+	const newField = field.value.map(r => r.slice());
+	newField[row][col] = background.value;
+
+	field.value = newField;
 }
