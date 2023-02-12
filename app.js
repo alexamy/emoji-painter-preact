@@ -1,16 +1,36 @@
 import 'preact/debug';
 import { render } from 'preact';
-import { signal } from '@preact/signals';
 import { html } from './html.js';
+import { images, field } from './state.js';
 
-const count = signal(0);
-const increment = () => { count.value++; }
+function Images({ field }) {
+  return html`
+    <div>
+      ${field.value.map((row, i) => {
+        return html`
+          <${ImageRow} key=${i} row=${row} />
+        `;
+      })}
+    </div>
+  `;
+}
+
+function ImageRow({ row }) {
+  return html`
+    <div>
+      ${row.map((key, i) => {
+        return html`
+          <img key=${i} src='${images.value[key]}' />
+        `;
+      })}
+    </div>
+  `;
+}
 
 function App() {
   return html`
     <div>
-      <h1>${count}</h1>
-      <button onClick=${increment}>+</button>
+      <${Images} field=${field} />
     </div>
   `;
 }
