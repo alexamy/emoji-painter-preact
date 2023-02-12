@@ -2,3 +2,16 @@
   width: 32px;
   height: 32px;
 }
+
+.fieldControls {
+  display: flex;
+  align-items: center;
+}
+
+.fieldLabel {
+  margin-right: 0.5rem;
+}
+
+.fieldInput {
+  width: 2rem;
+}
