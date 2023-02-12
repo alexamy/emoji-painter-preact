@@ -51,3 +51,8 @@ export function clear() {
     return row.map(() => background.value);
   });
 }
+
+export function copy() {
+  const msg = field.value.map(row => row.join('')).join('\n');
+  navigator.clipboard.writeText(msg);
+}

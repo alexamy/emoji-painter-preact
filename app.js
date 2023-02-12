@@ -2,7 +2,7 @@ import 'preact/debug';
 import { render } from 'preact';
 import { html } from './html.js';
 import { Images } from './images.js';
-import { field, fieldSize, setHeight, setWidth, clear } from './state.js';
+import { field, fieldSize, setHeight, setWidth, clear, copy } from './state.js';
 
 function FieldControls() {
   const { width, height } = fieldSize.value;
@@ -18,6 +18,7 @@ function FieldControls() {
         onchange=${(e) => setHeight(e.target.value)}
       />
       <button onclick=${clear}>Clear</button>
+      <button onclick=${copy}>Copy</button>
     </div>
   `;
 }
