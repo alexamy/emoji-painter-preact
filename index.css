@@ -1,21 +1,21 @@
 .imageRow {
-  line-height: 0;
+	line-height: 0;
 }
 
 .image {
-  width: 32px;
-  height: 32px;
+	width: 32px;
+	height: 32px;
 }
 
 .fieldControls {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .fieldLabel {
-  margin-right: 0.5rem;
+	margin-right: 0.5rem;
 }
 
 .fieldInput {
-  width: 3rem;
+	width: 3rem;
 }
