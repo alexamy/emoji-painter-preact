@@ -1,7 +1,7 @@
 import 'preact/debug';
 import { render } from 'preact';
 import { html } from './html.js';
-import { images, field, fieldSize } from './state.js';
+import { images, field, fieldSize, setHeight } from './state.js';
 
 function FieldControls() {
   const { width, height } = fieldSize.value;
@@ -9,9 +9,12 @@ function FieldControls() {
   return html`
     <div class='fieldControls'>
       <label class='fieldLabel' for='width'>Width: </label>
-      <input class='fieldInput' type='number' name='width' value=${width} onchange=${(e) => console.log(e)}  />
+      <input class='fieldInput' type='number' name='width' value=${width} min='1'
+      />
       <label class='fieldLabel' for='height'>Height: </label>
-      <input class='fieldInput' type='number' name='height' value=${height} />
+      <input class='fieldInput' type='number' name='height' value=${height} min='1'
+        onchange=${(e) => setHeight(e.target.value)}
+      />
     </div>
   `;
 }
