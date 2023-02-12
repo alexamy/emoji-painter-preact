@@ -12,6 +12,3 @@ Features:
 Libraries:
 - [Preact](https://preactjs.com/)
 - [HTM](https://github.com/developit/htm) for JSX-like template syntax
-- [Water.css](https://watercss.kognise.dev/) for default CSS styles
-
-
