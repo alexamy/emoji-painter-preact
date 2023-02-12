@@ -2,6 +2,7 @@
 
 Proof-of-concept app in plain html file.
 
+To start an app, serve a static site from app directory.
 Left / right click on the field cells to change emojis.
 
 Features:
