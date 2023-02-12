@@ -2,7 +2,7 @@ import 'preact/debug';
 import { render } from 'preact';
 import { html } from './html.js';
 import { Images } from './images.js';
-import { field, fieldSize, setHeight, setWidth } from './state.js';
+import { field, fieldSize, setHeight, setWidth, clear } from './state.js';
 
 function FieldControls() {
   const { width, height } = fieldSize.value;
@@ -17,6 +17,7 @@ function FieldControls() {
       <input class='fieldInput' type='number' name='height' value=${height} min='1' max='25'
         onchange=${(e) => setHeight(e.target.value)}
       />
+      <button onclick=${clear}>Clear</button>
     </div>
   `;
 }

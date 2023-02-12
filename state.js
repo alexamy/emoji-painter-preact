@@ -19,7 +19,7 @@ export const fieldSize = computed(() => ({
 }));
 
 export function setWidth(newWidth) {
-  const { width, height } = fieldSize.value;
+  const { width } = fieldSize.value;
   if(newWidth <= 0) return;
 
   if(newWidth < width) {
@@ -33,7 +33,6 @@ export function setWidth(newWidth) {
   }
 }
 
-
 export function setHeight(newHeight) {
   const { width, height } = fieldSize.value;
   if(newHeight <= 0) return;
@@ -45,4 +44,10 @@ export function setHeight(newHeight) {
     const newRows = Array(newRowsCount).fill().map(() => Array(width).fill(background.value));
     field.value = [...field.value, ...newRows];
   }
+}
+
+export function clear() {
+  field.value = field.value.map(row => {
+    return row.map(() => background.value);
+  });
 }
